@@ -1,0 +1,97 @@
+.imgbox {
+    display: grid;
+    height: 100%;
+    max-width: 750px;
+    grid-template-rows: auto 30px 50px 50px;
+    grid-template-columns: 50% 50%;
+}
+
+.map-border {
+    border: 5px solid #555;
+    width: 95%;
+    height: 95%;
+    max-height: 800px;
+    margin: auto;
+    position: relative;
+    grid-row: 1;
+    grid-column: 1 / span 2;
+}
+
+.the-map {
+    width: 100%;
+    height: 100%;
+}
+
+.loading-img-container {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.loading-img {
+    border: 5px solid #555;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    background-color: white;
+}
+
+.what-to-find {
+    font-size: 25pt;
+    margin: 10px;
+}
+
+.is-hidden {
+    visibility: hidden;
+}
+
+.the-map-pin {
+    position:absolute;
+    width: 20px;
+    pointer-events: none;
+}
+
+.submit-btn {
+    grid-row: 3;
+    grid-column: 1 / span 2;
+    grid-column-end: 3;
+    margin: 10px;
+    margin-top: 0px;
+}
+
+.reload-btn {
+    grid-row: 4;
+    grid-column: 1 / span 2;
+    grid-column-end: 3;
+    margin: 10px;
+    margin-top: 0px;
+}
+
+button.disabled {
+    background-color: gray !important;
+}
+
+.coord {
+    font-weight: bold;
+    text-align: center;
+}
+
+.latitude {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.longitude {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+@media (max-width: 991px) {
+
+}

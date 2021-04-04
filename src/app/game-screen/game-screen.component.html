@@ -1,0 +1,18 @@
+<div class="imgbox" (window:resize)="onResize($event)">
+  <div class="map-border">
+    <img #theMap class="the-map" src='/assets/images/AfricaMap.png' on-click="onEvent($event)">
+    <img #theMapPin class="the-map-pin" [ngClass]="{ 'is-hidden': !pinPlaced }" src='/assets/images/Pin.png'>
+  </div>
+  <div class="loading-img-container" *ngIf="loading">
+    <img class="loading-img" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+  </div>
+  <span class="coord latitude" [ngClass]="{ 'is-hidden': !pinPlaced }">{{latitudeDisplay}}</span>
+  <span class="coord longitude" [ngClass]="{ 'is-hidden': !pinPlaced }">{{longitudeDisplay}}</span>
+  <button class="submit-btn" [disabled]="!pinPlaced || submitted" mat-raised-button color="primary"
+      [class.disabled]="!pinPlaced || submitted" (click)="submit()">
+    {{submitBtnText}}
+  </button>
+  <button *ngIf="submitted" [routerLink]="['/dashboard']" class="reload-btn" mat-raised-button color="primary" (click)="reload()">
+    Reload
+  </button>
+</div>
